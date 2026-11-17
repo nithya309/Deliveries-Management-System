@@ -1,0 +1,97 @@
+# DATABASE DESIGN
+
+## 1. Project Title
+Last-Mile Delivery Operations Analytics
+
+## 2. Database Name
+delivery_project
+
+## 3. Introduction
+The Last-Mile Delivery Operations Analytics project is a relational database project developed using MySQL. It is designed to manage customer details, orders, drivers, vehicles, and delivery information.
+
+The main purpose of this project is to analyze delivery operations, track delivery performance, and understand driver and vehicle utilization.
+
+## 4. Database Tables
+
+### Table 1: Customers
+Purpose: Stores customer information.
+
+| Column Name | Data Type | Constraint |
+|---|---|---|
+| customer_id | INT | Primary Key |
+| customer_name | VARCHAR(50) | NOT NULL |
+| customer_type | VARCHAR(20) | - |
+| city | VARCHAR(50) | - |
+| phone | VARCHAR(15) | UNIQUE |
+
+### Table 2: Orders
+Purpose: Stores customer order details.
+
+| Column Name | Data Type | Constraint |
+|---|---|---|
+| order_id | INT | Primary Key |
+| customer_id | INT | Foreign Key, NOT NULL |
+| order_date | DATE | - |
+| service_type | VARCHAR(30) | - |
+| priority | VARCHAR(20) | - |
+| order_value | DECIMAL(10,2) | - |
+
+### Table 3: Drivers
+Purpose: Stores driver information.
+
+| Column Name | Data Type | Constraint |
+|---|---|---|
+| driver_id | INT | Primary Key |
+| driver_name | VARCHAR(50) | NOT NULL |
+| phone | VARCHAR(15) | UNIQUE |
+| city | VARCHAR(50) | - |
+
+### Table 4: Vehicles
+Purpose: Stores vehicle information.
+
+| Column Name | Data Type | Constraint |
+|---|---|---|
+| vehicle_id | INT | Primary Key |
+| vehicle_type | VARCHAR(30) | NOT NULL |
+| registration_number | VARCHAR(20) | UNIQUE |
+
+### Table 5: Deliveries
+Purpose: Stores delivery and delivery performance information.
+
+| Column Name | Data Type | Constraint |
+|---|---|---|
+| delivery_id | INT | Primary Key |
+| order_id | INT | Foreign Key, UNIQUE, NOT NULL |
+| driver_id | INT | Foreign Key, NOT NULL |
+| vehicle_id | INT | Foreign Key, NOT NULL |
+| delivery_status | VARCHAR(20) | - |
+| delivery_minutes | INT | - |
+| attempts | INT | DEFAULT 1 |
+
+## 5. Relationships
+
+- Customers to Orders: One-to-Many.
+- Orders to Deliveries: One-to-One.
+- Drivers to Deliveries: One-to-Many.
+- Vehicles to Deliveries: One-to-Many.
+
+## 6. Constraints Used
+
+- PRIMARY KEY
+- FOREIGN KEY
+- NOT NULL
+- UNIQUE
+- DEFAULT
+
+## 7. Tools Used
+
+- MySQL 8.0
+- MySQL Workbench
+- SQL
+- GitHub
+
+## 8. Conclusion
+
+The database is designed to organize customer details, orders, driver information, vehicle details, and delivery records efficiently.
+
+It helps analyze delivery performance, order details, driver activities, and vehicle utilization using SQL queries.

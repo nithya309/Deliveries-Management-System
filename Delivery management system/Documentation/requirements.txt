@@ -1,0 +1,76 @@
+# PROJECT REQUIREMENTS
+
+## 1. Project Title
+Last-Mile Delivery Operations Analytics
+
+## 2. Project Objective
+To develop a relational database system using MySQL to manage customer information, orders, drivers, vehicles, and delivery details efficiently.
+
+The main objective is to analyze delivery performance, track orders, and understand driver and vehicle utilization.
+
+## 3. Functional Requirements
+
+1. Create and manage customer records.
+2. Store customer order information.
+3. Maintain driver details.
+4. Store vehicle information.
+5. Track delivery details and delivery status.
+6. Retrieve all customer, order, driver, vehicle, and delivery records.
+7. Search orders by Order ID.
+8. Retrieve orders customer-wise.
+9. Analyze orders based on service type and priority.
+10. Calculate total order value.
+11. Analyze delivery status.
+12. Calculate average delivery time.
+13. Analyze driver performance.
+14. Analyze vehicle utilization.
+15. Identify deliveries with multiple attempts.
+
+## 4. Non-Functional Requirements
+
+1. Data Integrity – Maintain accurate data using primary keys and foreign keys.
+2. Performance – Improve query performance using indexes.
+3. Reliability – Manage database operations using transactions.
+4. Maintainability – Organize SQL queries and database objects properly.
+
+## 5. Software Requirements
+
+- Operating System: Windows
+- Database: MySQL 8.0
+- Database Tool: MySQL Workbench
+- Query Language: SQL
+- Version Control: GitHub
+
+## 6. Hardware Requirements
+
+- Laptop or Desktop Computer
+- Minimum 4 GB RAM
+- Sufficient storage space
+- Internet connection for GitHub
+
+## 7. Project Features
+
+- Database Creation
+- Table Creation
+- Data Insertion
+- SQL Queries
+- Aggregate Functions
+- Joins
+- Views
+- Stored Procedures
+- Functions
+- Transactions
+- Delivery Performance Analysis
+- Driver and Vehicle Analysis
+
+## 8. Expected Outcome
+
+A relational database system that manages customer details, orders, drivers, vehicles, and delivery records.
+
+It helps analyze delivery performance, order values, delivery status, driver activities, and vehicle utilization using SQL.
+
+## 9. Conclusion
+
+This project demonstrates practical knowledge of SQL and relational database management concepts using MySQL.
+
+It provides useful insights into last-mile delivery operations through database queries and analysis.

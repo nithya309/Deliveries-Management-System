@@ -1,0 +1,123 @@
+# ENTITY RELATIONSHIP DIAGRAM (ER DIAGRAM)
+
+## 1. Project Title
+Last-Mile Delivery Operations Analytics
+
+## 2. Entities
+
+### CUSTOMERS
+- customer_id (Primary Key)
+- customer_name
+- customer_type
+- city
+- phone
+
+### ORDERS
+- order_id (Primary Key)
+- customer_id (Foreign Key)
+- order_date
+- service_type
+- priority
+- order_value
+
+### DRIVERS
+- driver_id (Primary Key)
+- driver_name
+- phone
+- city
+
+### VEHICLES
+- vehicle_id (Primary Key)
+- vehicle_type
+- registration_number
+
+### DELIVERIES
+- delivery_id (Primary Key)
+- order_id (Foreign Key)
+- driver_id (Foreign Key)
+- vehicle_id (Foreign Key)
+- delivery_status
+- delivery_minutes
+- attempts
+
+## 3. ER Diagram
+
+```text
++----------------------+
+|      CUSTOMERS       |
++----------------------+
+| PK customer_id       |
+|    customer_name     |
+|    customer_type     |
+|    city              |
+|    phone             |
++----------------------+
+           |
+           | 1
+           |
+           | M
++----------------------+
+|        ORDERS        |
++----------------------+
+| PK order_id          |
+| FK customer_id       |
+|    order_date        |
+|    service_type      |
+|    priority          |
+|    order_value       |
++----------------------+
+           |
+           | 1
+           |
+           | 1
++----------------------+
+|      DELIVERIES      |
++----------------------+
+| PK delivery_id       |
+| FK order_id          |
+| FK driver_id         |
+| FK vehicle_id        |
+|    delivery_status   |
+|    delivery_minutes  |
+|    attempts          |
++----------------------+
+       |          |
+       | M        | M
+       |          |
+       | 1        | 1
++--------------+  +----------------+
+|   DRIVERS    |  |    VEHICLES    |
++--------------+  +----------------+
+| PK driver_id |  | PK vehicle_id  |
+| driver_name  |  | vehicle_type   |
+| phone        |  | registration_  |
+| city         |  | number         |
++--------------+  +----------------+
+
+## 4. Relationships
+
+1. One customer can place multiple orders.
+2. One order has one delivery.
+3. One driver can handle multiple deliveries.
+4. One vehicle can be used for multiple deliveries.
+
+## 5. Keys
+
+Primary Keys:
+- customers.customer_id
+- orders.order_id
+- drivers.driver_id
+- vehicles.vehicle_id
+- deliveries.delivery_id
+
+Foreign Keys:
+- orders.customer_id
+- deliveries.order_id
+- deliveries.driver_id
+- deliveries.vehicle_id
+
+## 6. Conclusion
+
+The ER diagram represents the relationships between customers, orders, drivers, vehicles, and deliveries.
+
+It helps understand how the five tables are connected in the Last-Mile Delivery Operations Analytics database.
